@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor", "Libexec.FetchReceiptProcessor/Libexec.FetchReceiptProcessor.csproj", "{ED84D863-FAE8-45B8-AA44-2E330E78930F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Data", "Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj", "{E8ABBAC8-7519-4EA4-8A44-819A5D253B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Extensions", "Libexec.FetchReceiptProcessor.Extensions\Libexec.FetchReceiptProcessor.Extensions.csproj", "{1C139D1B-9EBD-41A3-B851-12D8519E4C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Data.Tests", "..\test\Libexec.FetchReceiptProcessor.Data.Tests\Libexec.FetchReceiptProcessor.Data.Tests.csproj", "{172AA187-C81B-4FAE-914E-8A513B4D9359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Extensions.Tests", "..\test\Libexec.FetchReceiptProcessor.Extensions.Tests\Libexec.FetchReceiptProcessor.Extensions.Tests.csproj", "{0C166615-BCBD-48A7-BFD0-D96441B8E446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Tests", "..\test\Libexec.FetchReceiptProcessor.Tests\Libexec.FetchReceiptProcessor.Tests.csproj", "{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source Control", "Source Control", "{DBC1A2A7-190F-40AA-8585-E27F5B5791E5}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Actions", "GitHub Actions", "{FD758EE2-E115-455E-804C-C98009533F34}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\dependabot.yml = ..\.github\dependabot.yml
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{1B6A6DD0-8E27-4BA7-B442-7EE77D20B8E1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dockerfile = ..\Dockerfile
+		..\.dockerignore = ..\.dockerignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{29A5AA94-9643-48BA-87B7-086E02CD6113}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTTP Requests", "HTTP Requests", "{BFECC614-B6A6-49AC-93CC-50B0EAA7FF3C}"
+	ProjectSection(SolutionItems) = preProject
+		..\test\GetPoints.http = ..\test\GetPoints.http
+		..\test\SimpleReceipt.http = ..\test\SimpleReceipt.http
+		..\test\MorningReceipt.http = ..\test\MorningReceipt.http
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED84D863-FAE8-45B8-AA44-2E330E78930F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED84D863-FAE8-45B8-AA44-2E330E78930F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED84D863-FAE8-45B8-AA44-2E330E78930F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED84D863-FAE8-45B8-AA44-2E330E78930F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ABBAC8-7519-4EA4-8A44-819A5D253B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ABBAC8-7519-4EA4-8A44-819A5D253B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ABBAC8-7519-4EA4-8A44-819A5D253B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ABBAC8-7519-4EA4-8A44-819A5D253B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172AA187-C81B-4FAE-914E-8A513B4D9359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172AA187-C81B-4FAE-914E-8A513B4D9359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172AA187-C81B-4FAE-914E-8A513B4D9359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172AA187-C81B-4FAE-914E-8A513B4D9359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C166615-BCBD-48A7-BFD0-D96441B8E446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C166615-BCBD-48A7-BFD0-D96441B8E446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C166615-BCBD-48A7-BFD0-D96441B8E446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C166615-BCBD-48A7-BFD0-D96441B8E446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{172AA187-C81B-4FAE-914E-8A513B4D9359} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
+		{0C166615-BCBD-48A7-BFD0-D96441B8E446} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
+		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
+		{FD758EE2-E115-455E-804C-C98009533F34} = {DBC1A2A7-190F-40AA-8585-E27F5B5791E5}
+		{BFECC614-B6A6-49AC-93CC-50B0EAA7FF3C} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
+	EndGlobalSection
+EndGlobal

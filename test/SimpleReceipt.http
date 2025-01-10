@@ -1,0 +1,35 @@
+POST http://localhost:5284/receipts/process
+Content-Type: application/json
+
+{
+  "retailer": "Target",
+  "purchaseDate": "2022-01-02",
+  "purchaseTime": "13:13",
+  "total": "1.25",
+  "items": [
+    {"shortDescription": "Pepsi - 12-oz", "price": "1.25"}
+  ]
+}
+
+> {% client.global.set("added_guid", response.body.id); %}
+
+###
+
+GET http://localhost:5284/receipts/{{added_guid}}/points
+Accept: application/json
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+
+    client.test("Response content-type is json", function() {
+        let type = response.contentType.mimeType;
+        client.assert(type === "application/json", "Expected 'application/json' but received '" + type + "'");
+    });
+    
+    client.test("Correct points returned", function() {
+        let points = response.body.points;
+        client.assert(6 == points, "Expected 6 points but received '" + points + "'");
+    });
+%}
