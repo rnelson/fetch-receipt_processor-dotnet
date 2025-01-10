@@ -1,19 +1,52 @@
-﻿using Libexec.FetchReceiptProcessor.Abstractions;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Net.Mime;
+using Libexec.FetchReceiptProcessor.Abstractions;
 using Libexec.FetchReceiptProcessor.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libexec.FetchReceiptProcessor.Controllers;
 
-[Controller]
+[ApiController]
 [Route("[controller]")]
-public class ReceiptsController(IDatabase database)
+public class ReceiptsController(IDatabase database) : ControllerBase
 {
     private readonly IDatabase _db = database ?? throw new ArgumentNullException(nameof(database));
 
-    [HttpPost]
-    public async Task<ActionResult<ProcessResponse>> Process([FromBody] Receipt receipt)
+    [HttpPost("process")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [EndpointSummary("Submits a receipt for processing.")]
+    [EndpointDescription("Submits a receipt for processing.")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<ProcessResponse>> Process([FromBody] [Required] Receipt receipt)
     {
-        var id = await _db.AddReceiptAsync(receipt);
-        return new ProcessResponse { Id = id };
+        try
+        {
+            var id = await _db.AddReceiptAsync(receipt);
+            return new ProcessResponse { Id = id };
+        }
+        catch (Exception e)
+        {
+            return BadRequest("The receipt is invalid.");
+        }
+    }
+
+    [HttpGet("{id:guid}/points")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [EndpointSummary("Returns the points awarded for the receipt.")]
+    [EndpointDescription("Returns the points awarded for the receipt.")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<GetPointsResponse>> GetPoints([FromRoute] [Required] Guid id)
+    {
+        try
+        {
+            var points = await _db.GetPoints(id);
+            return new GetPointsResponse { Points = points };
+        }
+        catch (ReceiptNotFoundException e)
+        {
+            return NotFound("No receipt found for that ID.");
+        }
     }
 }
