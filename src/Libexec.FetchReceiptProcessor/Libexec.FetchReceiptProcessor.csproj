@@ -12,4 +12,9 @@
         <PackageReference Include="System.Text.Json" Version="9.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
+      <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj" />
+    </ItemGroup>
+
 </Project>

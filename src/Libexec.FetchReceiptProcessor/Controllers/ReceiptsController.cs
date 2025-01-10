@@ -1,15 +1,19 @@
-﻿using Libexec.FetchReceiptProcessor.Models;
+﻿using Libexec.FetchReceiptProcessor.Abstractions;
+using Libexec.FetchReceiptProcessor.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libexec.FetchReceiptProcessor.Controllers;
 
 [Controller]
 [Route("[controller]")]
-public class ReceiptsController
+public class ReceiptsController(IDatabase database)
 {
+    private readonly IDatabase _db = database ?? throw new ArgumentNullException(nameof(database));
+
     [HttpPost]
     public async Task<ActionResult<ProcessResponse>> Process([FromBody] Receipt receipt)
     {
-        return (ProcessResponse)null;
+        var id = await _db.AddReceiptAsync(receipt);
+        return new ProcessResponse { Id = id };
     }
 }
