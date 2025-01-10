@@ -1,11 +1,11 @@
-﻿namespace Libexec.FetchReceiptProcessor.Abstractions.Tests;
+﻿namespace Libexec.FetchReceiptProcessor.Data.Tests;
 
-public class ReceiptNotFoundException
+public class ReceiptNotFoundExceptionTests
 {
     [Fact]
     public void ReceiptNotFoundException_Constructor_Works()
     {
-        var e = new Abstractions.ReceiptNotFoundException();
+        var e = new ReceiptNotFoundException();
         
         Assert.NotNull(e);
     }
@@ -14,7 +14,7 @@ public class ReceiptNotFoundException
     public void ReceiptNotFoundException_ConstructorWithMessage_Works()
     {
         const string expected = "No receipt found for that ID.";
-        var e = new Abstractions.ReceiptNotFoundException(expected);
+        var e = new ReceiptNotFoundException(expected);
         
         Assert.NotNull(e);
         Assert.Equal(expected, e.Message);
@@ -26,7 +26,7 @@ public class ReceiptNotFoundException
         const string expected = "No receipt found for that ID.";
         
         var inner = new Exception();
-        var e = new Abstractions.ReceiptNotFoundException(expected, inner);
+        var e = new ReceiptNotFoundException(expected, inner);
         
         Assert.NotNull(e);
         Assert.NotNull(e.InnerException);

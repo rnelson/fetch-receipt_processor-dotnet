@@ -1,6 +1,4 @@
-﻿using Libexec.FetchReceiptProcessor.Abstractions;
-
-namespace Libexec.FetchReceiptProcessor.Data.Tests;
+﻿namespace Libexec.FetchReceiptProcessor.Data.Tests;
 
 public class DatabaseTests
 {
@@ -17,8 +15,8 @@ public class DatabaseTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         
@@ -33,8 +31,8 @@ public class DatabaseTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         
@@ -64,8 +62,8 @@ public class DatabaseTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         

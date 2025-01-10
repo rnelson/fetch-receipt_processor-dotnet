@@ -1,4 +1,4 @@
-﻿namespace Libexec.FetchReceiptProcessor.Abstractions;
+﻿namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <summary>
 /// An interface to the database.

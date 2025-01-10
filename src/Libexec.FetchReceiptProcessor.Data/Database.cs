@@ -1,6 +1,4 @@
-﻿using Libexec.FetchReceiptProcessor.Abstractions;
-
-namespace Libexec.FetchReceiptProcessor.Data;
+﻿namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <inheritdoc/>
 public class Database : IDatabase

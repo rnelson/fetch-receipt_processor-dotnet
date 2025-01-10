@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Libexec.FetchReceiptProcessor.Abstractions;
+namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <summary>
 /// Response for `/receipts/process`

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Text.Json.Serialization;
-using Libexec.FetchReceiptProcessor.Abstractions;
+using Libexec.FetchReceiptProcessor.Data;
 
 namespace Libexec.FetchReceiptProcessor.Models;
 

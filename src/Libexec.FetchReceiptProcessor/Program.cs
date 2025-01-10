@@ -1,4 +1,3 @@
-using Libexec.FetchReceiptProcessor.Abstractions;
 using Libexec.FetchReceiptProcessor.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,3 +33,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+
+app.Run();

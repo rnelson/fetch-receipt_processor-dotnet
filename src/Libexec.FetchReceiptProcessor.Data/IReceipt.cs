@@ -1,12 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
+using Libexec.FetchReceiptProcessor.Data;
 
-namespace Libexec.FetchReceiptProcessor.Abstractions;
+namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <summary>
 /// A single receipt.
 /// </summary>
 [SuppressMessage("ReSharper", "UnusedMemberInSuper.Global")]
 [SuppressMessage("ReSharper", "UnusedMember.Global")]
+[JsonDerivedType(typeof(Receipt))]
+[JsonPolymorphic(UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToNearestAncestor)]
 public interface IReceipt
 {
     /// <summary>
@@ -17,12 +21,12 @@ public interface IReceipt
     /// <summary>
     /// The date of the purchase printed on the receipt.
     /// </summary>
-    public DateOnly PurchaseDate { get; set; }
+    public string PurchaseDate { get; set; }
     
     /// <summary>
     /// The time of the purchase printed on the receipt. 24-hour time expected.
     /// </summary>
-    public TimeOnly PurchaseTime { get; set; }
+    public string PurchaseTime { get; set; }
 
     /// <summary>
     /// The list of items purchased on the receipt.

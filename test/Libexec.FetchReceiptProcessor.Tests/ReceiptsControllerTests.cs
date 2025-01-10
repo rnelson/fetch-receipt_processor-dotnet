@@ -63,8 +63,8 @@ public class ReceiptsControllerTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         

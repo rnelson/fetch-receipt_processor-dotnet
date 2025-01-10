@@ -1,11 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
+using Libexec.FetchReceiptProcessor.Data;
 
-namespace Libexec.FetchReceiptProcessor.Abstractions;
+namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <summary>
 /// A single item on a receipt.
 /// </summary>
 [SuppressMessage("ReSharper", "UnusedMemberInSuper.Global")]
+[JsonDerivedType(typeof(Item))]
+[JsonPolymorphic(UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToNearestAncestor)]
 public interface IItem
 {
     /// <summary>

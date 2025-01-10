@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net.Mime;
-using Libexec.FetchReceiptProcessor.Abstractions;
+using Libexec.FetchReceiptProcessor.Data;
 using Libexec.FetchReceiptProcessor.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;

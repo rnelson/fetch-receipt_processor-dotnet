@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using Libexec.FetchReceiptProcessor.Abstractions;
 using Libexec.FetchReceiptProcessor.Extensions;
 
 namespace Libexec.FetchReceiptProcessor.Data;
@@ -20,14 +19,28 @@ public class Receipt : IReceipt
     public required string Retailer { get; set; }
     
     /// <inheritdoc/>
-    [JsonIgnore]
+    [Required]
+    [JsonRequired]
+    [JsonPropertyName("purchaseDate")]
     [Description("The date of the purchase printed on the receipt.")]
-    public required DateOnly PurchaseDate { get; set; }
-    
+    [RegularExpression(@"^\d{4}\-\d{2}\-\d{2}$")]
+    public required string PurchaseDate
+    {
+        get => _purchaseDate.ToString("yyyy-MM-dd");
+        set => _purchaseDate = DateOnly.ParseExact(value, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+    }
+
     /// <inheritdoc/>
-    [JsonIgnore]
+    [Required]
+    [JsonRequired]
+    [JsonPropertyName("purchaseTime")]
     [Description("The time of the purchase printed on the receipt. 24-hour time expected.")]
-    public required TimeOnly PurchaseTime { get; set; }
+    [RegularExpression("^([01][0-9]|2[0-3]):([0-5][0-9])$")]
+    public required string PurchaseTime
+    {
+        get => _purchaseTime.ToString("HH:mm");
+        set => _purchaseTime = TimeOnly.ParseExact(value, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+    }
     
     /// <inheritdoc/>
     [Required]
@@ -35,7 +48,7 @@ public class Receipt : IReceipt
     [JsonPropertyName("items")]
     [Description("The list of items purchased on the receipt.")]
     [MinLength(1)]
-    public List<IItem> Items { get; } = [];
+    public List<IItem> Items { get; set; } = [];
     
     /// <inheritdoc/>
     [Required]
@@ -44,15 +57,10 @@ public class Receipt : IReceipt
     [Description("The total amount paid on the receipt.")]
     [RegularExpression(@"^\\d+\\.\\d{2}$")]
     public required decimal Total { get; set; }
-    
-    [JsonRequired]
-    [JsonPropertyName("purchaseDate")]
-    internal string PurchaseDateString => PurchaseDate.ToString("yyyy-MM-dd");
-    
-    [JsonRequired]
-    [JsonPropertyName("purchaseTime")]
-    internal string PurchaseTimeString => PurchaseTime.ToString("HH:mm");
 
+    private DateOnly _purchaseDate;
+    private TimeOnly _purchaseTime;
+    
     /// <inheritdoc/>
     /// <remarks>
     /// Because this is just a little dummy API as part of an interview process, this
@@ -112,7 +120,7 @@ public class Receipt : IReceipt
         points += 0;
         
         // 6 points if the day in the purchase date is odd.
-        if (PurchaseDate.Day % 2 != 0)
+        if (_purchaseDate.Day % 2 != 0)
             points += 6;
         
         // 10 points if the time of purchase is after 2:00pm and before 4:00pm.
@@ -131,7 +139,7 @@ public class Receipt : IReceipt
         //       clarification from the person defining the rules.
         // Note that TimeOnly.IsBetween has an inclusive start time and exclusive end time,
         // so contrary to my second note above, in code this is written as [14:01, 16:00).
-        if (PurchaseTime.IsBetween(TimeOnly.Parse("14:01"), TimeOnly.Parse("16:00")))
+        if (_purchaseTime.IsBetween(TimeOnly.Parse("14:01"), TimeOnly.Parse("16:00")))
             points += 10;
 
         return points;

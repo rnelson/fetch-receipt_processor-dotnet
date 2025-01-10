@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,7 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
       <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj" />
       <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Extensions\Libexec.FetchReceiptProcessor.Extensions.csproj" />
     </ItemGroup>

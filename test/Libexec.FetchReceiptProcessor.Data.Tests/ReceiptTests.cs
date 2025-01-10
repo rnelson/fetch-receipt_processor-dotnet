@@ -8,8 +8,8 @@ public class ReceiptTests
         var receipt = new Receipt
         {
             Retailer = "Target",
-            PurchaseDate = DateOnly.Parse("2022-01-01"),
-            PurchaseTime = TimeOnly.Parse("13:01"),
+            PurchaseDate = "2022-01-01",
+            PurchaseTime = "13:01",
             Total = 35.35m
         };
         
@@ -28,8 +28,8 @@ public class ReceiptTests
         var receipt = new Receipt
         {
             Retailer = "M&M Corner Market",
-            PurchaseDate = DateOnly.Parse("2022-03-20"),
-            PurchaseTime = TimeOnly.Parse("14:33"),
+            PurchaseDate = "2022-03-20",
+            PurchaseTime = "14:33",
             Total = 9.00m
         };
         
@@ -49,14 +49,14 @@ public class ReceiptTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         
         receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
 
-        Assert.Equal(expected, receipt.PurchaseDateString);
+        Assert.Equal(expected, receipt.PurchaseDate);
     }
     
     [Fact]
@@ -67,13 +67,13 @@ public class ReceiptTests
         var receipt = new Receipt
         {
             Retailer = "Rockbrook Camera",
-            PurchaseDate = DateOnly.Parse("2022-08-17"),
-            PurchaseTime = TimeOnly.Parse("15:42"),
+            PurchaseDate = "2022-08-17",
+            PurchaseTime = "15:42",
             Total = 946.18m
         };
         
         receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
 
-        Assert.Equal(expected, receipt.PurchaseTimeString);
+        Assert.Equal(expected, receipt.PurchaseTime);
     }
 }

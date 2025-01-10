@@ -1,4 +1,4 @@
-﻿namespace Libexec.FetchReceiptProcessor.Abstractions;
+﻿namespace Libexec.FetchReceiptProcessor.Data;
 
 public class ReceiptNotFoundException : Exception
 {
