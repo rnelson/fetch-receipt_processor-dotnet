@@ -1,6 +1,4 @@
-﻿using Libexec.FetchReceiptProcessor.Data;
-
-namespace Libexec.FetchReceiptProcessor.Tests;
+﻿namespace Libexec.FetchReceiptProcessor.Data.Tests;
 
 public class ReceiptTests
 {
@@ -41,5 +39,41 @@ public class ReceiptTests
         receipt.Items.Add(new Item { ShortDescription = "Gatorade", Price = 2.25m });
         
         Assert.Equal(109, receipt.CalculatePoints());
+    }
+    
+    [Fact]
+    public void Receipt_PurchaseDateString_Works()
+    {
+        const string expected = "2022-08-17";
+        
+        var receipt = new Receipt
+        {
+            Retailer = "Rockbrook Camera",
+            PurchaseDate = DateOnly.Parse("2022-08-17"),
+            PurchaseTime = TimeOnly.Parse("15:42"),
+            Total = 946.18m
+        };
+        
+        receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
+
+        Assert.Equal(expected, receipt.PurchaseDateString);
+    }
+    
+    [Fact]
+    public void Receipt_PurchaseTimeString_Works()
+    {
+        const string expected = "15:42";
+        
+        var receipt = new Receipt
+        {
+            Retailer = "Rockbrook Camera",
+            PurchaseDate = DateOnly.Parse("2022-08-17"),
+            PurchaseTime = TimeOnly.Parse("15:42"),
+            Total = 946.18m
+        };
+        
+        receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
+
+        Assert.Equal(expected, receipt.PurchaseTimeString);
     }
 }

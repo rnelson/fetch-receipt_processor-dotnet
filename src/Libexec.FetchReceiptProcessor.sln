@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Extensions.Tests", "Libexec.FetchReceiptProcessor.Extensions.Tests\Libexec.FetchReceiptProcessor.Extensions.Tests.csproj", "{1657BAAB-4247-4581-A5EC-62DB7D9655CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Abstractions.Tests", "Libexec.FetchReceiptProcessor.Abstractions.Tests\Libexec.FetchReceiptProcessor.Abstractions.Tests.csproj", "{9B0DEE5D-46FE-48E6-A523-B222F6F4EFAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0DEE5D-46FE-48E6-A523-B222F6F4EFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0DEE5D-46FE-48E6-A523-B222F6F4EFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0DEE5D-46FE-48E6-A523-B222F6F4EFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0DEE5D-46FE-48E6-A523-B222F6F4EFAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

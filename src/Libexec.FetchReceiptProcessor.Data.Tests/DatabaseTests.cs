@@ -1,4 +1,6 @@
-﻿namespace Libexec.FetchReceiptProcessor.Data.Tests;
+﻿using Libexec.FetchReceiptProcessor.Abstractions;
+
+namespace Libexec.FetchReceiptProcessor.Data.Tests;
 
 public class DatabaseTests
 {
@@ -53,5 +55,23 @@ public class DatabaseTests
 
         var points = await db.GetPointsAsync(id);
         Assert.Equal(31, points);
+    }
+
+    [Fact]
+    public async Task Database_GetPointsAsync_ThrowsExceptionWhenNotFound()
+    {
+        var db = new Database();
+        var receipt = new Receipt
+        {
+            Retailer = "Rockbrook Camera",
+            PurchaseDate = DateOnly.Parse("2022-08-17"),
+            PurchaseTime = TimeOnly.Parse("15:42"),
+            Total = 946.18m
+        };
+        
+        receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8       ", Price = 899.99m });
+        var id = await db.AddReceiptAsync(receipt);
+
+        await Assert.ThrowsAsync<ReceiptNotFoundException>(() => db.GetPointsAsync(Guid.NewGuid()));
     }
 }

@@ -10,10 +10,13 @@ namespace Libexec.FetchReceiptProcessor.Data;
 public class Receipt : IReceipt
 {
     /// <inheritdoc/>
+    [Required]
     [JsonRequired]
     [JsonPropertyName("retailer")]
     [Description("The name of the retailer or store the receipt is from.")]
     [RegularExpression(@"^[\\w\\s\\-&]+$")]
+    [StringLength(9999, MinimumLength = 1)]
+    [MinLength(1)]
     public required string Retailer { get; set; }
     
     /// <inheritdoc/>
@@ -27,13 +30,15 @@ public class Receipt : IReceipt
     public required TimeOnly PurchaseTime { get; set; }
     
     /// <inheritdoc/>
+    [Required]
     [JsonRequired]
     [JsonPropertyName("items")]
     [Description("The list of items purchased on the receipt.")]
     [MinLength(1)]
-    public List<IItem> Items { get; private set; } = [];
+    public List<IItem> Items { get; } = [];
     
     /// <inheritdoc/>
+    [Required]
     [JsonRequired]
     [JsonPropertyName("total")]
     [Description("The total amount paid on the receipt.")]
@@ -42,11 +47,11 @@ public class Receipt : IReceipt
     
     [JsonRequired]
     [JsonPropertyName("purchaseDate")]
-    private string PurchaseDateString => PurchaseDate.ToString("yyyy-MM-dd");
+    internal string PurchaseDateString => PurchaseDate.ToString("yyyy-MM-dd");
     
     [JsonRequired]
     [JsonPropertyName("purchaseTime")]
-    private string PurchaseTimeString => PurchaseTime.ToString("HH:mm");
+    internal string PurchaseTimeString => PurchaseTime.ToString("HH:mm");
 
     /// <inheritdoc/>
     /// <remarks>

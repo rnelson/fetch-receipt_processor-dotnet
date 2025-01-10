@@ -3,7 +3,9 @@ using System.Net.Mime;
 using Libexec.FetchReceiptProcessor.Abstractions;
 using Libexec.FetchReceiptProcessor.Data;
 using Libexec.FetchReceiptProcessor.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Libexec.FetchReceiptProcessor.Controllers;
 
@@ -17,27 +19,23 @@ public class ReceiptsController(IDatabase database) : ControllerBase
     [Consumes(MediaTypeNames.Application.Json)]
     [EndpointSummary("Submits a receipt for processing.")]
     [EndpointDescription("Submits a receipt for processing.")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<ProcessResponse>> Process([FromBody] [Required] Receipt receipt)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProcessResponse))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequest))]
+    public async Task<ActionResult<ProcessResponse>> Process([FromBody] [Required] IReceipt? receipt)
     {
-        try
-        {
-            var id = await _db.AddReceiptAsync(receipt);
-            return new ProcessResponse { Id = id };
-        }
-        catch (Exception)
-        {
+        if (receipt is null || !ModelState.IsValid)
             return BadRequest("The receipt is invalid.");
-        }
+        
+        var id = await _db.AddReceiptAsync(receipt);
+        return new ProcessResponse { Id = id };
     }
 
     [HttpGet("{id:guid}/points")]
     [Consumes(MediaTypeNames.Application.Json)]
     [EndpointSummary("Returns the points awarded for the receipt.")]
     [EndpointDescription("Returns the points awarded for the receipt.")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetPointsResponse))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFound))]
     public async Task<ActionResult<GetPointsResponse>> GetPoints([FromRoute] [Required] Guid id)
     {
         try
