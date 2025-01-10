@@ -18,6 +18,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Tests", "..\test\Libexec.FetchReceiptProcessor.Tests\Libexec.FetchReceiptProcessor.Tests.csproj", "{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source Control", "Source Control", "{DBC1A2A7-190F-40AA-8585-E27F5B5791E5}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Actions", "GitHub Actions", "{FD758EE2-E115-455E-804C-C98009533F34}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\dependabot.yml = ..\.github\dependabot.yml
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{1B6A6DD0-8E27-4BA7-B442-7EE77D20B8E1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dockerfile = ..\Dockerfile
+		..\.dockerignore = ..\.dockerignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{29A5AA94-9643-48BA-87B7-086E02CD6113}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,5 +85,6 @@ Global
 		{172AA187-C81B-4FAE-914E-8A513B4D9359} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
 		{0C166615-BCBD-48A7-BFD0-D96441B8E446} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
 		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
+		{FD758EE2-E115-455E-804C-C98009533F34} = {DBC1A2A7-190F-40AA-8585-E27F5B5791E5}
 	EndGlobalSection
 EndGlobal
