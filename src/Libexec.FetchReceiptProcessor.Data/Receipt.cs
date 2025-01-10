@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using Libexec.FetchReceiptProcessor.Extensions;
 
@@ -8,6 +9,8 @@ namespace Libexec.FetchReceiptProcessor.Data;
 /// <summary>
 /// A single receipt.
 /// </summary>
+[SuppressMessage("ReSharper", "PropertyCanBeMadeInitOnly.Global")]
+[SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
 public class Receipt
 {
     /// <summary>

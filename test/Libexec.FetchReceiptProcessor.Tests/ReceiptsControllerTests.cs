@@ -68,7 +68,7 @@ public class ReceiptsControllerTests
             Total = 946.18m
         };
         
-        receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
+        receipt.Items.Add(new() { ShortDescription = "NIKKOR Z 85mm f/1.8", Price = 899.99m });
         
         return receipt;
     }
