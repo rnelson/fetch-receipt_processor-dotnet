@@ -3,10 +3,10 @@
 /// <inheritdoc/>
 public class Database : IDatabase
 {
-    private readonly Dictionary<Guid, IReceipt> _receipts = [];
+    private readonly Dictionary<Guid, Receipt> _receipts = [];
     
     /// <inheritdoc/>
-    public Task<Guid> AddReceiptAsync(IReceipt receipt)
+    public Task<Guid> AddReceiptAsync(Receipt receipt)
     {
         var id = Guid.NewGuid();
         _receipts.Add(id, receipt);

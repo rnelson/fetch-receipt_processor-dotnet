@@ -5,10 +5,14 @@ using Libexec.FetchReceiptProcessor.Extensions;
 
 namespace Libexec.FetchReceiptProcessor.Data;
 
-/// <inheritdoc/>
-public class Receipt : IReceipt
+/// <summary>
+/// A single receipt.
+/// </summary>
+public class Receipt
 {
-    /// <inheritdoc/>
+    /// <summary>
+    /// The name of the retailer or store the receipt is from.
+    /// </summary>
     [Required]
     [JsonRequired]
     [JsonPropertyName("retailer")]
@@ -18,7 +22,9 @@ public class Receipt : IReceipt
     [MinLength(1)]
     public required string Retailer { get; set; }
     
-    /// <inheritdoc/>
+    /// <summary>
+    /// The date of the purchase printed on the receipt.
+    /// </summary>
     [Required]
     [JsonRequired]
     [JsonPropertyName("purchaseDate")]
@@ -30,7 +36,9 @@ public class Receipt : IReceipt
         set => _purchaseDate = DateOnly.ParseExact(value, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// The time of the purchase printed on the receipt. 24-hour time expected.
+    /// </summary>
     [Required]
     [JsonRequired]
     [JsonPropertyName("purchaseTime")]
@@ -42,15 +50,19 @@ public class Receipt : IReceipt
         set => _purchaseTime = TimeOnly.ParseExact(value, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
     }
     
-    /// <inheritdoc/>
+    /// <summary>
+    /// The list of items purchased on the receipt.
+    /// </summary>
     [Required]
     [JsonRequired]
     [JsonPropertyName("items")]
     [Description("The list of items purchased on the receipt.")]
     [MinLength(1)]
-    public List<IItem> Items { get; set; } = [];
+    public List<Item> Items { get; set; } = [];
     
-    /// <inheritdoc/>
+    /// <summary>
+    /// The total amount paid on the receipt.
+    /// </summary>
     [Required]
     [JsonRequired]
     [JsonPropertyName("total")]
@@ -61,7 +73,10 @@ public class Receipt : IReceipt
     private DateOnly _purchaseDate;
     private TimeOnly _purchaseTime;
     
-    /// <inheritdoc/>
+    /// <summary>
+    /// Calculates the number of points this receipt is worth.
+    /// </summary>
+    /// <returns>The number of points.</returns>
     /// <remarks>
     /// Because this is just a little dummy API as part of an interview process, this
     /// just lives here on my `Receipt` object. In a more realistic scenario, this would

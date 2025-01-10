@@ -10,7 +10,7 @@ public interface IDatabase
     /// </summary>
     /// <param name="receipt">The receipt.</param>
     /// <returns>The unique ID of the added receipt.</returns>
-    public Task<Guid> AddReceiptAsync(IReceipt receipt);
+    public Task<Guid> AddReceiptAsync(Receipt receipt);
 
     /// <summary>
     /// Looks up the receipt by the ID and returns an object specifying the points awarded.

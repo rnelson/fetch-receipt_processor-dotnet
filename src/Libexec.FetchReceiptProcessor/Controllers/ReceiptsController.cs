@@ -19,7 +19,7 @@ public class ReceiptsController(IDatabase database) : ControllerBase
     [EndpointDescription("Submits a receipt for processing.")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProcessResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequest))]
-    public async Task<ActionResult<ProcessResponse>> Process([FromBody] [Required] IReceipt? receipt)
+    public async Task<ActionResult<ProcessResponse>> Process([FromBody] [Required] Receipt? receipt)
     {
         if (receipt is null || !ModelState.IsValid)
             return BadRequest("The receipt is invalid.");
