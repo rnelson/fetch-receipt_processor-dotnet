@@ -12,12 +12,9 @@ public class Item
     [RegularExpression(@"^[\\w\\s\\-]+$")]
     public required string ShortDescription { get; set; }
     
-    [JsonIgnore]
+    [JsonRequired]
+    [JsonPropertyName("price")]
     [Description("The total price paid for this item.")]
     [RegularExpression(@"^\\d+\\.\\d{2}$")]
     public required decimal Price { get; set; }
-    
-    [JsonRequired]
-    [JsonPropertyName("price")]
-    private string PriceString => Price.ToString("0.00");
 }

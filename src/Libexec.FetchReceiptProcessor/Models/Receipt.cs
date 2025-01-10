@@ -26,7 +26,8 @@ public class Receipt
     [MinLength(1)]
     public List<Item> Items { get; private set; } = [];
     
-    [JsonIgnore]
+    [JsonRequired]
+    [JsonPropertyName("total")]
     [Description("The total amount paid on the receipt.")]
     [RegularExpression(@"^\\d+\\.\\d{2}$")]
     public required decimal Total { get; set; }
@@ -38,8 +39,4 @@ public class Receipt
     [JsonRequired]
     [JsonPropertyName("purchaseTime")]
     private string PurchaseTimeString => PurchaseTime.ToString("HH:mm");
-    
-    [JsonRequired]
-    [JsonPropertyName("total")]
-    private string TotalString => Total.ToString("0.00");
 }

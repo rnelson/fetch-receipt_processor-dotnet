@@ -1,8 +1,22 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddSchemaTransformer((schema, context, _) =>
+    {
+        if (context.JsonTypeInfo.Type == typeof(decimal))
+        {
+            schema.Format = "string";
+        }
+        
+        // TODO: See if I can eliminate the backing properties for date/time
+        
+        return Task.CompletedTask;
+    });
+});
 
 var app = builder.Build();
 
