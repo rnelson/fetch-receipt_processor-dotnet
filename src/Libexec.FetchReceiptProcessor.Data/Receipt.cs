@@ -17,7 +17,7 @@ public class Receipt
     [JsonRequired]
     [JsonPropertyName("retailer")]
     [Description("The name of the retailer or store the receipt is from.")]
-    [RegularExpression(@"^[\\w\\s\\-&]+$")]
+    [RegularExpression(@"^[\w\s\-&]+$")]
     [StringLength(9999, MinimumLength = 1)]
     [MinLength(1)]
     public required string Retailer { get; set; }
@@ -67,7 +67,7 @@ public class Receipt
     [JsonRequired]
     [JsonPropertyName("total")]
     [Description("The total amount paid on the receipt.")]
-    [RegularExpression(@"^\\d+\\.\\d{2}$")]
+    [RegularExpression(@"^\d+\.\d{2}$")]
     public required decimal Total { get; set; }
 
     private DateOnly _purchaseDate;
