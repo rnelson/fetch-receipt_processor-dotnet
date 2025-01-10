@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

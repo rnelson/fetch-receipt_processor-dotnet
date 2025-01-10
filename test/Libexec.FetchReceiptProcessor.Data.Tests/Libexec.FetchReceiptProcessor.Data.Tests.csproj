@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
-    <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj" />
+    <ProjectReference Include="..\..\src\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj" />
   </ItemGroup>
 
 </Project>
