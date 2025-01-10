@@ -70,7 +70,7 @@ public class DatabaseTests
         };
         
         receipt.Items.Add(new Item { ShortDescription = "NIKKOR Z 85mm f/1.8       ", Price = 899.99m });
-        var id = await db.AddReceiptAsync(receipt);
+        _ = await db.AddReceiptAsync(receipt);
 
         await Assert.ThrowsAsync<ReceiptNotFoundException>(() => db.GetPointsAsync(Guid.NewGuid()));
     }

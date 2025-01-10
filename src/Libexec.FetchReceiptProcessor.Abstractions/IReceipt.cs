@@ -1,8 +1,12 @@
-﻿namespace Libexec.FetchReceiptProcessor.Abstractions;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Libexec.FetchReceiptProcessor.Abstractions;
 
 /// <summary>
 /// A single receipt.
 /// </summary>
+[SuppressMessage("ReSharper", "UnusedMemberInSuper.Global")]
+[SuppressMessage("ReSharper", "UnusedMember.Global")]
 public interface IReceipt
 {
     /// <summary>

@@ -1,8 +1,11 @@
-﻿namespace Libexec.FetchReceiptProcessor.Abstractions;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Libexec.FetchReceiptProcessor.Abstractions;
 
 /// <summary>
 /// Response for `/receipts/{id}/points`
 /// </summary>
+[SuppressMessage("ReSharper", "UnusedMemberInSuper.Global")]
 public interface IGetPointsResponse
 {
     /// <summary>

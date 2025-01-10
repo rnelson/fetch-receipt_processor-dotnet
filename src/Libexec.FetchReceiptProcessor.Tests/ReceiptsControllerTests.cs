@@ -51,7 +51,7 @@ public class ReceiptsControllerTests
         var addedResponse = await controller.Process(CreateReceipt());
 
         Assert.IsType<ProcessResponse>(addedResponse.Value);
-        var addedGuid = Guid.Parse(addedResponse.Value!.Id.ToString());
+        _ = Guid.Parse(addedResponse.Value!.Id.ToString());
         var newGuid = Guid.NewGuid();
         
         var searchResponse = await controller.GetPoints(newGuid);
