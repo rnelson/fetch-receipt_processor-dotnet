@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Libexec.FetchReceiptProcessor.Abstractions;
 
-namespace Libexec.FetchReceiptProcessor.Models;
+namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <inheritdoc/>
 public class Item : IItem

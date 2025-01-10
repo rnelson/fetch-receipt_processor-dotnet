@@ -8,6 +8,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Tests", "Libexec.FetchReceiptProcessor.Tests\Libexec.FetchReceiptProcessor.Tests.csproj", "{1F24ED4A-9F9E-4E47-A88B-BA44496888AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Data.Tests", "Libexec.FetchReceiptProcessor.Data.Tests\Libexec.FetchReceiptProcessor.Data.Tests.csproj", "{06E556A0-69A5-4F66-9FAE-776ACA91B4FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Extensions", "Libexec.FetchReceiptProcessor.Extensions\Libexec.FetchReceiptProcessor.Extensions.csproj", "{1C139D1B-9EBD-41A3-B851-12D8519E4C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libexec.FetchReceiptProcessor.Extensions.Tests", "Libexec.FetchReceiptProcessor.Extensions.Tests\Libexec.FetchReceiptProcessor.Extensions.Tests.csproj", "{1657BAAB-4247-4581-A5EC-62DB7D9655CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +36,17 @@ Global
 		{1F24ED4A-9F9E-4E47-A88B-BA44496888AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F24ED4A-9F9E-4E47-A88B-BA44496888AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F24ED4A-9F9E-4E47-A88B-BA44496888AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E556A0-69A5-4F66-9FAE-776ACA91B4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E556A0-69A5-4F66-9FAE-776ACA91B4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E556A0-69A5-4F66-9FAE-776ACA91B4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E556A0-69A5-4F66-9FAE-776ACA91B4FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C139D1B-9EBD-41A3-B851-12D8519E4C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1657BAAB-4247-4581-A5EC-62DB7D9655CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

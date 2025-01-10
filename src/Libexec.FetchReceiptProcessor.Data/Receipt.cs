@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 using Libexec.FetchReceiptProcessor.Abstractions;
 using Libexec.FetchReceiptProcessor.Extensions;
 
-namespace Libexec.FetchReceiptProcessor.Models;
+namespace Libexec.FetchReceiptProcessor.Data;
 
 /// <inheritdoc/>
 public class Receipt : IReceipt

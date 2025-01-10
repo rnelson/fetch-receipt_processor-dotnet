@@ -17,7 +17,7 @@ public class Database : IDatabase
     }
 
     /// <inheritdoc/>
-    public Task<int> GetPoints(Guid receiptId)
+    public Task<int> GetPointsAsync(Guid receiptId)
     {
         if (!_receipts.TryGetValue(receiptId, out var receipt))
             throw new ReceiptNotFoundException($"receipt with id {receiptId} not found");

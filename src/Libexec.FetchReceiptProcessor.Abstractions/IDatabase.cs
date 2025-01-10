@@ -17,5 +17,5 @@ public interface IDatabase
     /// </summary>
     /// <param name="receiptId">The receipt's ID.</param>
     /// <returns>The number of points awarded.</returns>
-    public Task<int> GetPoints(Guid receiptId);
+    public Task<int> GetPointsAsync(Guid receiptId);
 }

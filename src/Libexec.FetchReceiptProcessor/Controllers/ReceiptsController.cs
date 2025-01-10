@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net.Mime;
 using Libexec.FetchReceiptProcessor.Abstractions;
+using Libexec.FetchReceiptProcessor.Data;
 using Libexec.FetchReceiptProcessor.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +26,7 @@ public class ReceiptsController(IDatabase database) : ControllerBase
             var id = await _db.AddReceiptAsync(receipt);
             return new ProcessResponse { Id = id };
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return BadRequest("The receipt is invalid.");
         }
@@ -41,10 +42,10 @@ public class ReceiptsController(IDatabase database) : ControllerBase
     {
         try
         {
-            var points = await _db.GetPoints(id);
+            var points = await _db.GetPointsAsync(id);
             return new GetPointsResponse { Points = points };
         }
-        catch (ReceiptNotFoundException e)
+        catch (ReceiptNotFoundException)
         {
             return NotFound("No receipt found for that ID.");
         }

@@ -15,6 +15,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
       <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Data\Libexec.FetchReceiptProcessor.Data.csproj" />
+      <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Extensions\Libexec.FetchReceiptProcessor.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

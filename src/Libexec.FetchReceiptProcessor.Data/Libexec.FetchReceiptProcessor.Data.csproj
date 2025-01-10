@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Abstractions\Libexec.FetchReceiptProcessor.Abstractions.csproj" />
+    <ProjectReference Include="..\Libexec.FetchReceiptProcessor.Extensions\Libexec.FetchReceiptProcessor.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

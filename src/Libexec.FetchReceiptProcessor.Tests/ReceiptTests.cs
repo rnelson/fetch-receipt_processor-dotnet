@@ -1,4 +1,4 @@
-﻿using Libexec.FetchReceiptProcessor.Models;
+﻿using Libexec.FetchReceiptProcessor.Data;
 
 namespace Libexec.FetchReceiptProcessor.Tests;
 
