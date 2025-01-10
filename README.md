@@ -1,5 +1,7 @@
 # Fetch Receipt Processor (.NET)
 
+![Build status](https://github.com/rnelson/fetch-receipt_processor-dotnet/actions/workflows/dotnet.yml/badge.svg) ![License](https://img.shields.io/github/license/rnelson/fetch-receipt_processor-dotnet)
+
 A solution for Fetch's [Receipt Processor challenge][fetch-rpc].
 
 ### About
