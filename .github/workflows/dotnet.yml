@@ -22,6 +22,6 @@ jobs:
         dotnet-version: |
           9.0.x
     - name: Restore dependencies
-      run: dotnet restore src/Libexec.FetchReceiptProcessor/Libexec.FetchReceiptProcessor.sln
+      run: dotnet restore src/Libexec.FetchReceiptProcessor.sln
     - name: Build
-      run: dotnet build src/Libexec.FetchReceiptProcessor/Libexec.FetchReceiptProcessor.sln --no-restore
+      run: dotnet build src/Libexec.FetchReceiptProcessor.sln --no-restore
