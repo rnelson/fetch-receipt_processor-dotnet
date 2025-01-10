@@ -6,7 +6,6 @@ namespace Libexec.FetchReceiptProcessor.Data;
 public class Database : IDatabase
 {
     private readonly Dictionary<Guid, IReceipt> _receipts = [];
-    private readonly List<IItem> _items = [];
     
     /// <inheritdoc/>
     public Task<Guid> AddReceiptAsync(IReceipt receipt)
