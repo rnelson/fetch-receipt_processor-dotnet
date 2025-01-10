@@ -37,6 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTTP Requests", "HTTP Requests", "{BFECC614-B6A6-49AC-93CC-50B0EAA7FF3C}"
+	ProjectSection(SolutionItems) = preProject
+		..\test\GetPoints.http = ..\test\GetPoints.http
+		..\test\SimpleReceipt.http = ..\test\SimpleReceipt.http
+		..\test\MorningReceipt.http = ..\test\MorningReceipt.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,5 +80,6 @@ Global
 		{0C166615-BCBD-48A7-BFD0-D96441B8E446} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
 		{5CBDEA99-4EF7-4E57-83EB-DBA0249DE712} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
 		{FD758EE2-E115-455E-804C-C98009533F34} = {DBC1A2A7-190F-40AA-8585-E27F5B5791E5}
+		{BFECC614-B6A6-49AC-93CC-50B0EAA7FF3C} = {463EAEF8-FE1E-44BB-8EB6-9FAE4964B0A8}
 	EndGlobalSection
 EndGlobal
