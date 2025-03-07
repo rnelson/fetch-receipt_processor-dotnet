@@ -22,4 +22,11 @@ public class Database : IDatabase
         
         return Task.FromResult(receipt.CalculatePoints());
     }
+
+    /// <inheritdoc/>
+    public Task<bool> DeleteReceiptAsync(Guid receiptId)
+    {
+        var deleted = _receipts.Remove(receiptId);
+        return Task.FromResult(deleted);
+    }
 }

@@ -18,4 +18,11 @@ public interface IDatabase
     /// <param name="receiptId">The receipt's ID.</param>
     /// <returns>The number of points awarded.</returns>
     public Task<int> GetPointsAsync(Guid receiptId);
+
+    /// <summary>
+    /// Deletes a receipt from the database.
+    /// </summary>
+    /// <param name="receiptId">The receipt's ID.</param>
+    /// <returns><c>true</c> if deleted, else <c>false</c>.</returns>
+    public Task<bool> DeleteReceiptAsync(Guid receiptId);
 }

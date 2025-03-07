@@ -46,4 +46,16 @@ public class ReceiptsController(IDatabase database) : ControllerBase
             return NotFound("No receipt found for that ID.");
         }
     }
+
+    [HttpGet("{id:guid}/delete")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [EndpointSummary("Deletes the requested receipt.")]
+    [EndpointDescription("Deletes the requested receipt.")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetPointsResponse))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFound))]
+    public async Task<ActionResult<DeleteReceiptResponse>> DeleteReceipt([FromRoute] [Required] Guid id)
+    {
+        var deleted = await _db.DeleteReceiptAsync(id);
+        return new DeleteReceiptResponse { Deleted = deleted };
+    }
 }

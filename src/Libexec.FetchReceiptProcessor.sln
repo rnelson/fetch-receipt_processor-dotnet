@@ -42,6 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTTP Requests", "HTTP Reque
 		..\test\GetPoints.http = ..\test\GetPoints.http
 		..\test\SimpleReceipt.http = ..\test\SimpleReceipt.http
 		..\test\MorningReceipt.http = ..\test\MorningReceipt.http
+		..\test\DeleteReceipt.http = ..\test\DeleteReceipt.http
 	EndProjectSection
 EndProject
 Global
